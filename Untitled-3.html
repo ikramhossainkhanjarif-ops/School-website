@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=yes"/>
+    <title>পূর্ণাছগাম উচ্চ বিদ্যালয় | কোম্পানীগঞ্জ, সিলেট</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&family=Anek+Bangla:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --green: #1a5c38;
+            --green-mid: #27874f;
+            --green-light: #eaf5ee;
+            --gold: #b8860b;
+            --gold-light: #fdf6e3;
+            --text: #1c2533;
+            --muted: #5a6a7a;
+            --border: #d8e2d0;
+            --white: #fff;
+            --bg: #fcfcfc;
+        }
+        body {
+            font-family: 'Anek Bangla', 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* TOP BAR */
+        .topbar { background: var(--green); color: #f8f8f8; font-size: 13px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+        .topbar a { color: #c5e8d0; margin-left: 14px; font-weight: 500; }
+        .topbar a:hover { color: #fff; }
+
+        /* HEADER */
+        header { background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .school-logo { 
+            width: 65px; 
+            height: 65px; 
+            border-radius: 50%; 
+            overflow: hidden; 
+            border: 2px solid var(--gold); 
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .school-logo img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            padding: 4px; 
+        }
+        .school-name h1 { font-size: 20px; color: var(--green); font-weight: 700; line-height: 1.2; }
+        .school-name p { font-size: 11px; color: var(--muted); margin-top: 2px; }
+        .header-contacts { margin-left: auto; text-align: right; font-size: 11px; color: var(--muted); line-height: 1.6; }
+        .header-contacts strong { color: var(--green); }
+
+        /* NAVIGATION - মোবাইলের জন্য উন্নত */
+        nav { background: var(--green); position: sticky; top: 0; z-index: 1000; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .nav-inner { display: inline-flex; padding: 0 12px; }
+        .nav-inner a { color: #c5e8d0; font-size: 14px; padding: 12px 14px; display: inline-block; transition: all .2s; font-weight: 600; cursor: pointer; }
+        .nav-inner a:hover, .nav-inner a.active { background: rgba(255,255,255,.15); color: #fff; box-shadow: inset 0 -3px 0 var(--gold); }
+
+        /* NOTICE TICKER */
+        .ticker { background: var(--gold-light); border-top: 2px solid var(--gold); border-bottom: 1px solid #e4d09a; padding: 8px 0; }
+        .ticker-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 10px; }
+        .ticker-label { background: var(--gold); color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+        .ticker-text { font-size: 12px; color: #7a5c00; overflow: hidden; white-space: nowrap; width: 100%; position: relative; }
+        .ticker-scroll { display: inline-block; animation: scroll 25s linear infinite; padding-left: 100%; }
+        @keyframes scroll { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+
+        /* HERO BANNER */
+        .hero { 
+            position: relative; 
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%), 
+                        url('school_hero_bg.jpg') no-repeat center center; 
+            background-size: cover;
+            min-height: 400px;
+            display: flex; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-content { max-width: 1200px; margin: 0 auto; padding: 40px 16px; display: flex; flex-direction: column; gap: 30px; width: 100%; position: relative; z-index: 1; }
+        .hero-text h2 { font-size: 28px; color: #fff; line-height: 1.2; margin-bottom: 12px; font-weight: 700; }
+        .hero-text h2 span { color: #f5c842; }
+        .hero-text p { color: #e2f3e8; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all .2s; text-align: center; display: inline-block; }
+        .btn-primary { background: var(--gold); color: #fff; }
+        .btn-primary:hover { background: #9a7009; }
+        .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.6); }
+        .hero-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+        .stat-card { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255,255,255,.2); border-radius:8px; padding: 12px; text-align: center; }
+        .stat-card .num { font-family: 'Playfair Display', serif; font-size: 24px; color: #f5c842; font-weight: 700; }
+        .stat-card .lbl { font-size: 11px; color: #a8d8bb; margin-top: 3px; }
+
+        /* MAIN LAYOUT - মোবাইল ফ্রেন্ডলি */
+        .main-wrapper { max-width: 1200px; margin: 0 auto; padding: 25px 16px; display: flex; flex-direction: column; gap: 25px; }
+        
+        @media (min-width: 768px) {
+            .main-wrapper { flex-direction: row; }
+            .main-content { flex: 1.5; }
+            .sidebar { flex: 1; }
+        }
+
+        /* SECTION TITLES */
+        .sec-title { font-size: 20px; color: var(--green); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--green-light); display: flex; align-items: center; gap: 8px; font-weight: 700; }
+        .sec-title::before { content: ''; display: inline-block; width: 4px; height: 20px; background: var(--gold); border-radius: 2px; }
+
+        /* DYNAMIC CONTENT SECTIONS */
+        .page-section { display: none; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); margin-bottom: 20px; }
+        .page-section.active-section { display: block; }
+
+        /* TABLES - মোবাইলের জন্য বিশেষ সমাধান */
+        .table-responsive { 
+            overflow-x: auto; 
+            -webkit-overflow-scrolling: touch;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        /* মোবাইলের জন্য টেবেল স্টাইল */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            font-size: 12px;
+            min-width: 600px;
+        }
+        
+        @media (max-width: 768px) {
+            table { font-size: 11px; min-width: 550px; }
+            th, td { padding: 8px 6px; }
+        }
+        
+        th, td { 
+            border: 1px solid var(--border); 
+            padding: 10px 8px; 
+            vertical-align: middle; 
+            text-align: left; 
+        }
+        th { background-color: var(--green); color: #fff; font-weight: 600; white-space: nowrap; }
+        tr:nth-child(even) { background-color: #fafdfa; }
+        
+        .person-photo { 
+            width: 40px; 
+            height: 40px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            background: #ddd; 
+            border: 1px solid var(--border);
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* মোবাইলে ছবি ছোট */
+        @media (max-width: 768px) {
+            .person-photo { width: 32px; height: 32px; }
+        }
+
+        /* TEACHERS কার্ড ভিউ - মোবাইলের জন্য বিকল্প */
+        .teachers-mobile-view {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .teacher-card {
+            background: #f9fbf9;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        
+        .teacher-card-img {
+            flex-shrink: 0;
+        }
+        
+        .teacher-card-img img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+        
+        .teacher-card-info {
+            flex: 1;
+        }
+        
+        .teacher-card-info h3 {
+            font-size: 16px;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+        
+        .teacher-card-info .designation {
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        
+        .teacher-card-info .details {
+            font-size: 11.5px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+        
+        .teacher-card-info .details div {
+            margin-bottom: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .teachers-table-view {
+                display: none;
+            }
+            .teachers-mobile-view {
+                display: flex;
+            }
+        }
+
+        /* BIOGRAPHY CARDS */
+        .biography-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 15px 0; }
+        @media (min-width: 600px) {
+            .biography-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .bio-card { background: #fafbfc; border: 1px solid var(--border); border-radius: 10px; padding: 15px; display: flex; gap: 12px; align-items: flex-start; }
+        .bio-img { width: 70px; height: 90px; object-fit: cover; border-radius: 10px; background: #eee; border: 1px solid #cbd5e1; }
+        .bio-info h3 { font-size: 15px; color: var(--text); font-weight: 700; margin-bottom: 2px; }
+        .bio-info .role { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+        .bio-info p { font-size: 12.5px; color: var(--muted); text-align: justify; line-height: 1.5; }
+
+        /* ACHIEVEMENTS */
+        .achievement-item { background: #f4fcf7; padding: 12px; margin-bottom: 8px; border-radius: 8px; border-left: 4px solid #27874f; font-size: 13px; }
+
+        /* GALLERY GRID */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+        .photo-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 8px; text-align: center; }
+        .photo-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; background: #eaeaea; }
+
+        /* QUICK LINKS GRID */
+        .quick-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
+        .quick-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 12px 8px; text-align: center; transition: all .2s; cursor: pointer; }
+        .quick-item .qi-icon { font-size: 22px; margin-bottom: 4px; }
+        .quick-item .qi-label { font-size: 11px; color: var(--text); font-weight: 600; }
+
+        /* SIDEBAR */
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .notice-board, .events-board, .class-chart, .widget { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .sidebar-header { background: var(--green); color: #fff; padding: 12px 15px; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: space-between; }
+        .sidebar-header.gold-header { background: var(--gold); }
+        .sidebar-item { padding: 10px 15px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
+        .sidebar-item a { font-size: 12.5px; color: var(--text); line-height: 1.4; font-weight: 500; cursor: pointer; }
+        .sidebar-date { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+        /* STATS BAND */
+        .stats-band { background: var(--green); padding: 25px 0; margin-top: 20px; }
+        .stats-band-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; text-align: center; }
+        @media (min-width: 600px) {
+            .stats-band-inner { grid-template-columns: repeat(4,1fr); }
+        }
+        .stat-item .snum { font-size: 28px; color: #f5c842; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .stat-item .slbl { color: #a8d8bb; font-size: 11px; margin-top: 4px; }
+
+        /* FOOTER */
+        footer { background: #0d2e18; color: #7aab8a; padding: 30px 0 0; border-top: 3px solid var(--gold); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px 25px; display: flex; flex-direction: column; gap: 25px; }
+        @media (min-width: 768px) {
+            .footer-inner { flex-direction: row; gap: 40px; }
+            .footer-about { flex: 2; }
+            .footer-col { flex: 1; }
+        }
+        .footer-about h3 { font-size: 16px; color: #fff; margin-bottom: 10px; }
+        .footer-about p { font-size: 12.5px; line-height: 1.6; }
+        .footer-col h4 { font-size: 13px; color: #c5e8d0; margin-bottom: 12px; }
+        .footer-col a { display: block; font-size: 12px; color: #7aab8a; padding: 4px 0; cursor: pointer; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 15px 16px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 11px; flex-wrap: wrap; gap: 8px; }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <span>📧 purnachogum@gmail.com</span>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100013431248539" target="_blank">Facebook</a>
+            <a onclick="switchPage('notices')" style="cursor:pointer;">নোটিশ</a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="school-logo">
+            <img src="logo.jpg" alt="পূর্ণাছগাম উচ্চ বিদ্যালয় লোগো">
+        </div>
+        <div class="school-name">
+            <h1>পূর্ণাছগাম উচ্চ বিদ্যালয়</h1>
+            <p>কোম্পানীগঞ্জ, সিলেট</p>
+        </div>
+        <div class="header-contacts">
+            <div><strong>EIIN:</strong> ১৩০২৩১</div>
+            <div><strong>হেল্পলাইন:</strong> 01309-130231</div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-inner">
+        <a onclick="switchPage('home')" id="tab-home" class="active" style="cursor:pointer;">হোম</a>
+        <a onclick="switchPage('teachers')" id="tab-teachers" style="cursor:pointer;">শিক্ষক</a>
+        <a onclick="switchPage('students')" id="tab-students" style="cursor:pointer;">শিক্ষার্থী</a>
+        <a onclick="switchPage('academic')" id="tab-academic" style="cursor:pointer;">রুটিন</a>
+        <a onclick="switchPage('notices')" id="tab-notices" style="cursor:pointer;">নোটিশ</a>
+        <a onclick="switchPage('gallery')" id="tab-gallery" style="cursor:pointer;">গ্যালারি</a>
+    </div>
+</nav>
+
+<!-- NOTICE TICKER -->
+<div class="ticker">
+    <div class="ticker-inner">
+        <span class="ticker-label">📢 ব্রেকিং</span>
+        <div class="ticker-text">
+            <span class="ticker-scroll">
+                ২০২৬ শিক্ষাবর্ষের ভর্তি কার্যক্রম চলছে | এসএসসি পরীক্ষা ২০২৪ এ শতভাগ পাসের সাফল্য
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h2>পূর্ণাছগাম <br/><span>উচ্চ বিদ্যালয়</span></h2>
+            <p>কোম্পানীগঞ্জ, সিলেটের একটি ঐতিহ্যবাহী শিক্ষাপ্রতিষ্ঠান</p>
+            <div class="hero-btns">
+                <a onclick="switchPage('home')" class="btn btn-primary" style="cursor:pointer;">পরিচিতি</a>
+                <a onclick="switchPage('teachers')" class="btn btn-outline" style="cursor:pointer;">শিক্ষক</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card"><div class="num">১৯৯৬</div><div class="lbl">প্রতিষ্ঠা</div></div>
+            <div class="stat-card"><div class="num">৫০০+</div><div class="lbl">শিক্ষার্থী</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-wrapper">
+    
+    <main class="main-content">
+
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page-section active-section">
+            <div class="sec-title">বিদ্যালয় পরিচিতি</div>
+            <p style="color: var(--muted); font-size: 14px; text-align: justify;">সিলেট জেলার কোম্পানীগঞ্জ উপজেলায় ১৯৯৬ সালে প্রতিষ্ঠিত পূর্ণাছগাম উচ্চ বিদ্যালয় এ অঞ্চলের শিক্ষার আলো ছড়াতে নিরলসভাবে কাজ করে যাচ্ছে।</p>
+            
+            <div class="sec-title" style="margin-top: 20px;">আমাদের অভিভাবকবৃন্দ</div>
+            <div class="biography-grid">
+                <div class="bio-card">
+                    <img src="chairman.jpg" alt="সভাপতি" class="bio-img">
+                    <div class="bio-info">
+                        <h3>আলহাজ্ব মোঃ আব্দুর রহমান</h3>
+                        <div class="role">সভাপতি, পরিচালনা কমিটি</div>
+                        <p>"শিক্ষাই প্রগতি। বিদ্যালয়ের সার্বিক কল্যাণ কামনা করি।"</p>
+                    </div>
+                </div>
+                <div class="bio-card">
+                    <img src="Head.jpg" alt="প্রধান শিক্ষক" class="bio-img">
+                    <div class="bio-info">
+                        <h3>(ভারপ্রাপ্ত প্রধান শিক্ষক)</h3>
+                        <div class="role">প্রধান শিক্ষক</div>
+                        <p>"নৈতিক ও মানবিক মূল্যবোধে শিক্ষার্থীদের গড়ে তোলাই আমাদের লক্ষ্য।"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec-title">গৌরবময় অর্জন</div>
+            <div class="achievement-item">🏆 এসএসসি পরীক্ষা ২০২৪: শতভাগ পাস ও ৪ জন জিপিএ-৫</div>
+            <div class="achievement-item">🥇 উপজেলা ক্রীড়া প্রতিযোগিতা ২০২৫: চ্যাম্পিয়ন</div>
+        </div>
+
+        <!-- TEACHERS & STAFF - মোবাইল ফ্রেন্ডলি কার্ড ভিউ -->
+        <div id="page-teachers" class="page-section">
+            <div class="sec-title">শিক্ষকমণ্ডলী</div>
+            
+            <!-- টেবিল ভিউ (ডেস্কটপের জন্য) -->
+            <div class="table-responsive teachers-table-view">
+                 <table>
+                    <thead>
+                        <tr><th>ছবি</th><th>নাম ও পদবী</th><th>মোবাইল</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><img src="Teacher1.png" alt="ছবি" class="person-photo"></td><td><strong>শাহেদ আহমদ</strong><br/><small>সহকারী প্রধান শিক্ষক</small></td><td>01718-183233</td></tr>
+                        <tr><td><img src="teacher2.png" alt="ছবি" class="person-photo"></td><td><strong>মুহা: গোলাম রব্বানী</strong><br/><small>সিনিয়র শিক্ষক</small></td><td>01721-593671</td></tr>
+                        <tr><td><img src="teacher3.jpg" alt="ছবি" class="person-photo"></td><td><strong>বীর বিক্রম চৌধুরী</strong><br/><small>সহকারী শিক্ষক (গণিত)</small></td><td>01712 148153</td></tr>
+                        <tr><td><img src="teacher4.jpg" alt="ছবি" class="person-photo"></td><td><strong>কাজল চন্দ্র দাস</strong><br/><small>সহকারী শিক্ষক</small></td><td>01741 160008</td></tr>
+                        <tr><td><img src="teacher5.jpg" alt="ছবি" class="person-photo"></td><td><strong>উত্তম বেপারী</strong><br/><small>সহকারী শিক্ষক (কৃষি)</small></td><td>01734 678152</td></tr>
+                        <tr><td><img src="teacher6.jpg" alt="ছবি" class="person-photo"></td><td><strong>মো: রাশিদুল আলম</strong><br/><small>সহকারী শিক্ষক</small></td><td>01758 516565</td></tr>
+                        <tr><td><img src="teacher7.jpg" alt="ছবি" class="person-photo"></td><td><strong>মিহিকা বিশ্বাস</strong><br/><small>সহকারী শিক্ষক</small></td><td>01767 373634</td></tr>
+                        <tr><td><img src="teacher8.jpg" alt="ছবি" class="person-photo"></td><td><strong>শারমীন শাম্মী</strong><br/><small>সহকারী শিক্ষক</small></td><td>01913 005071</td></tr>
+                        <tr><td><img src="teacher9.jpg" alt="ছবি" class="person-photo"></td><td><strong>মামুনুর রশীদ</strong><br/><small>ল্যাব অপারেটর</small></td><td>01764 699599</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- কার্ড ভিউ (মোবাইলের জন্য) -->
+            <div class="teachers-mobile-view">
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="Teacher1.png" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>শাহেদ আহমদ</h3>
+                        <div class="designation">সহকারী প্রধান শিক্ষক</div>
+                        <div class="details">
+                            <div>📞 01718-183233</div>
+                            <div>📧 shahid@school.edu</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher2.png" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>মুহা: গোলাম রব্বানী</h3>
+                        <div class="designation">সিনিয়র শিক্ষক (ইসলাম ধর্ম)</div>
+                        <div class="details">
+                            <div>📞 01721-593671</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher3.jpg" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>বীর বিক্রম চৌধুরী</h3>
+                        <div class="designation">সহকারী শিক্ষক (গণিত)</div>
+                        <div class="details">
+                            <div>📞 01712 148153</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher4.jpg" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>কাজল চন্দ্র দাস</h3>
+                        <div class="designation">সহকারী শিক্ষক (সমাজ বিজ্ঞান)</div>
+                        <div class="details">
+                            <div>📞 01741 160008</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher5.jpg" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>উত্তম বেপারী</h3>
+                        <div class="designation">সহকারী শিক্ষক (কৃষি)</div>
+                        <div class="details">
+                            <div>📞 01734 678152</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher6.jpg" alt="শিক্ষক"></div>
+                    <div class="teacher-card-info">
+                        <h3>মো: রাশিদুল আলম</h3>
+                        <div class="designation">সহকারী শিক্ষক (ভৌত বিজ্ঞান)</div>
+                        <div class="details">
+                            <div>📞 01758 516565</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher7.jpg" alt="শিক্ষিকা"></div>
+                    <div class="teacher-card-info">
+                        <h3>মিহিকা বিশ্বাস</h3>
+                        <div class="designation">সহকারী শিক্ষক (হিন্দু ধর্ম)</div>
+                        <div class="details">
+                            <div>📞 01767 373634</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher8.jpg" alt="শিক্ষিকা"></div>
+                    <div class="teacher-card-info">
+                        <h3>শারমীন শাম্মী</h3>
+                        <div class="designation">সহকারী শিক্ষক (ব্যবসায় শিক্ষা)</div>
+                        <div class="details">
+                            <div>📞 01913 005071</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-card-img"><img src="teacher9.jpg" alt="কর্মকর্তা"></div>
+                    <div class="teacher-card-info">
+                        <h3>মামুনুর রশীদ</h3>
+                        <div class="designation">কম্পিউটার ল্যাব অপারেটর</div>
+                        <div class="details">
+                            <div>📞 01764 699599</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec-title" style="margin-top: 20px;">কর্মচারীবৃন্দ</div>
+            <div class="table-responsive">
+                <table>
+                    <thead><tr><th>ছবি</th><th>নাম ও পদবী</th><th>মোবাইল</th></tr></thead>
+                    <tbody>
+                        <tr><td><img src="staff1.jpg" alt="ছবি" class="person-photo"></td><td><strong>মোঃ আবদুস সালাম</strong><br/><small>উচ্চমান সহকারী</small></td><td>01712-345678</td></tr>
+                        <tr><td><img src="staff2.jpg" alt="ছবি" class="person-photo"></td><td><strong>লিটন চন্দ্র দাস</strong><br/><small>অফিস সহকারী</small></td><td>01911-987654</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- STUDENTS CORNER -->
+        <div id="page-students" class="page-section">
+            <div class="sec-title">শ্রেণিভিত্তিক শিক্ষার্থী</div>
+            <div class="table-responsive">
+                <table>
+                    <thead><tr><th>শ্রেণী</th><th>ছাত্র</th><th>ছাত্রী</th><th>মোট</th></tr></thead>
+                    <tbody>
+                        <tr><td>ষষ্ঠ</td><td>৪৫</td><td>৫০</td><td>৯৫</td></tr>
+                        <tr><td>সপ্তম</td><td>৪০</td><td>৫৫</td><td>৯৫</td></tr>
+                        <tr><td>অষ্টম</td><td>৫০</td><td>৪৫</td><td>৯৫</td></tr>
+                        <tr><td>নবম</td><td>৩৫</td><td>৪০</td><td>৭৫</td></tr>
+                        <tr><td>দশম</td><td>৩০</td><td>৪০</td><td>৭০</td></tr>
+                        <tr style="font-weight:bold;background:#eaf5ee;"><td>মোট</td><td>২০০</td><td>২৩০</td><td>৪৩০</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ACADEMIC ROUTINE -->
+        <div id="page-academic" class="page-section">
+            <div class="sec-title">একাডেমিক রুটিন</div>
+            <div class="item-box" style="border-left-color:var(--gold);">
+                <div style="font-weight:bold;">২০২৬ শিক্ষাবর্ষের সিলেবাস</div>
+                <a href="#" class="download-btn" style="display:inline-block;margin-top:8px;">ডাউনলোড</a>
+            </div>
+            <div class="item-box">
+                <div style="font-weight:bold;">বার্ষিক শিক্ষাপঞ্জী ২০২৬</div>
+                <a href="#" class="download-btn" style="display:inline-block;margin-top:8px;">ডাউনলোড</a>
+            </div>
+        </div>
+
+        <!-- NOTICE BOARD -->
+        <div id="page-notices" class="page-section">
+            <div class="sec-title">নোটিশ বোর্ড</div>
+            <div class="item-box">
+                <div style="font-size:11px; color:var(--muted);">০২ জুন, ২০২৬</div>
+                <div style="font-weight:bold;">অর্ধবার্ষিক পরীক্ষার রুটিন প্রকাশ</div>
+            </div>
+            <div class="item-box">
+                <div style="font-size:11px; color:var(--muted);">২৫ মে, ২০২৬</div>
+                <div style="font-weight:bold;">ঈদুল আজহার ছুটি সংক্রান্ত নোটিশ</div>
+            </div>
+        </div>
+
+        <!-- GALLERY -->
+        <div id="page-gallery" class="page-section">
+            <div class="sec-title">ফটো গ্যালারি</div>
+            <div class="gallery-grid">
+                <div class="photo-card"><img src="school2.jpeg" alt="বিদ্যালয়"><small>বিদ্যালয় ভবন</small></div>
+                <div class="photo-card"><img src="school3.jpeg" alt="শ্রেণিকক্ষ"><small>শ্রেণিকক্ষ</small></div>
+                <div class="photo-card"><img src="school5.jpeg" alt="ক্রীড়া"><small>ক্রীড়া অনুষ্ঠান</small></div>
+                <div class="photo-card"><img src="school1.jpeg" alt="প্রাঙ্গণ"><small>বিদ্যালয় প্রাঙ্গণ</small></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="widget" style="padding:15px; border-top:4px solid var(--gold)">
+            <div class="quick-grid">
+                <div class="quick-item" onclick="switchPage('students')"><div class="qi-icon">👨‍🎓</div><div class="qi-label">শিক্ষার্থী</div></div>
+                <div class="quick-item" onclick="switchPage('teachers')"><div class="qi-icon">👩‍🏫</div><div class="qi-label">শিক্ষক</div></div>
+                <div class="quick-item" onclick="switchPage('academic')"><div class="qi-icon">📅</div><div class="qi-label">রুটিন</div></div>
+                <div class="quick-item" onclick="switchPage('notices')"><div class="qi-icon">📋</div><div class="qi-label">বিজ্ঞপ্তি</div></div>
+                <div class="quick-item" onclick="switchPage('gallery')"><div class="qi-icon">🖼️</div><div class="qi-label">গ্যালারি</div></div>
+                <div class="quick-item" onclick="switchPage('home')"><div class="qi-icon">🏫</div><div class="qi-label">পরিচিতি</div></div>
+            </div>
+        </div>
+
+        <div class="notice-board">
+            <div class="sidebar-header"><span>📋 নোটিশ</span><a onclick="switchPage('notices')" style="cursor:pointer;">সব</a></div>
+            <div class="sidebar-item"><div class="sidebar-dot"></div><div><a onclick="switchPage('notices')">পরীক্ষার রুটিন</a><div class="sidebar-date">০২ জুন</div></div></div>
+            <div class="sidebar-item"><div class="sidebar-dot"></div><div><a onclick="switchPage('notices')">ঈদের ছুটি</a><div class="sidebar-date">২৫ মে</div></div></div>
+        </div>
+
+        <div class="events-board">
+            <div class="sidebar-header gold-header"><span>📅 ইভেন্টস</span></div>
+            <div class="sidebar-item"><div class="event-date-badge"><div class="day">২০</div><div class="month">JUN</div></div><div><h4 style="font-size:13px;">বার্ষিক ক্রীড়া</h4><p class="sidebar-date">২০ জুন, ২০২৬</p></div></div>
+        </div>
+    </aside>
+</div>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+    <div class="stats-band-inner">
+        <div class="stat-item"><div class="snum">৫</div><div class="slbl">শ্রেণী</div></div>
+        <div class="stat-item"><div class="snum">৪৩০+</div><div class="slbl">শিক্ষার্থী</div></div>
+        <div class="stat-item"><div class="snum">১৫+</div><div class="slbl">শিক্ষক</div></div>
+        <div class="stat-item"><div class="snum">৩০+</div><div class="slbl">বছর</div></div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-about">
+            <h3>পূর্ণাছগাম উচ্চ বিদ্যালয়</h3>
+            <p>খাগাইল বাজার, কোম্পানীগঞ্জ, সিলেট</p>
+            <div>📞 01309-130231</div>
+            <div>📧 purnachogum@gmail.com</div>
+        </div>
+        <div class="footer-col">
+            <h4>লিংক</h4>
+            <a onclick="switchPage('home')" style="cursor:pointer;">হোম</a>
+            <a onclick="switchPage('teachers')" style="cursor:pointer;">শিক্ষক</a>
+            <a onclick="switchPage('notices')" style="cursor:pointer;">নোটিশ</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© ২০২৬ পূর্ণাছগাম উচ্চ বিদ্যালয়</span>
+    </div>
+</footer>
+
+<script>
+    function switchPage(pageId) {
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(sec => sec.classList.remove('active-section'));
+
+        const targetSection = document.getElementById('page-' + pageId);
+        if(targetSection) targetSection.classList.add('active-section');
+
+        const tabs = document.querySelectorAll('.nav-inner a');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        
+        const activeTab = document.getElementById('tab-' + pageId);
+        if(activeTab) activeTab.classList.add('active');
+
+        window.scrollTo({top: 200, behavior: 'smooth'});
+    }
+</script>
+</body>
+</html>
