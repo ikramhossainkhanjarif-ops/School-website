@@ -236,6 +236,80 @@
             .quick-grid { grid-template-columns: repeat(3,1fr); }
             .hero-stats { grid-template-columns: 1fr 1fr; }
         }
+/* শিক্ষকমণ্ডলী ও কর্মচারী কার্ড ডিজাইন */
+.teacher-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* মোবাইলে ১টি করে কার্ড দেখাবে */
+    gap: 16px;
+    margin-top: 15px;
+}
+
+@media(min-width: 768px) {
+    .teacher-grid {
+        grid-template-columns: 1fr 1fr; /* কম্পিউটার বা ট্যাবে ২টি করে কলাম হবে */
+    }
+}
+
+.teacher-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+/* গোল্ডেন বর্ডারসহ গোল প্রোফাইল পিকচার */
+.t-avatar-wrapper {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid var(--gold); 
+    padding: 3px;
+    background: #fff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.t-avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.t-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.t-name {
+    font-size: 17px;
+    color: var(--green); /* আপনার ভ্যারিয়েবলের গাঢ় সবুজ রঙ */
+    font-weight: 700;
+}
+
+.t-role {
+    font-size: 13.5px;
+    color: var(--gold); /* আপনার ভ্যারিয়েবলের সোনালী রঙ */
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.t-contact {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
     </style>
 </head>
 <body>
@@ -427,21 +501,164 @@
                         <tr>
                             <td><img src="teacher8.jpg" alt="ছবি" class="person-photo"></td>
                             <td><strong>শারমীন শাম্মী</strong><br/><small style="color:var(--muted);">SHARMIN SHAMMY</small><br/><small>সহকারী শিক্ষক (ব্যবসায় শিক্ষা)</small></td>
-                            <td><small>ইনডেক্স: <br/>PDS:101738869<br/>জন্ম:01-12-1987</small></td>
-                            <td><small>গ্রাম: শ্রীরামপুর, ডাক:শ্রীরামপুর, উপজেলা:জামালপুর, জেলা: জামালপুর।</small></td>
-                            <td><small>01913 005071</small></td>
-                        </tr>
-                        <tr>
-                            <td><img src="teacher9.jpg" alt="ছবি" class="person-photo"></td>
-                            <td><strong>মামুনুর রশীদ</strong><br/><small style="color:var(--muted);">MAMUNUR ROSID</small><br/><small>কম্পিউটার ল্যাব অপারেটর</small></td>
-                            <td><small>ইনডেক্স:56853618<br/>PDS: 101694311<br/>জন্ম:03-05-2000</small></td>
-                            <td><small>গ্রাম: কায়েতগাঁও, ডাক:খাগাইল বাজার, উপজেলা:কোম্পানীগঞ্জ, জেলা: সিলেট।</small></td>
-                            <td><small>01764 699599</small></td>
-                        </tr>
+<div id="page-teachers" class="page-section">
+    <div class="sec-title">সম্মানিত শিক্ষকমণ্ডলী ও কর্মচারীবৃন্দ</div>
+    
+    <div class="teacher-grid">
 
-                    </tbody>
-                </table>
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher1.jpg" alt="شاہدد احمد"></div>
+            <div class="t-info">
+                <div class="t-name">शाहेद अहमद</div>
+                <div class="t-role">সহকারী প্রধান শিক্ষক</div>
+                <div class="t-contact">📞 01718-183233</div>
+                <div class="t-contact">📧 shahed@school.edu</div>
             </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher2.jpg" alt="গোলাম রব্বানী"></div>
+            <div class="t-info">
+                <div class="t-name">মুহা: গোলাম রব্বানী</div>
+                <div class="t-role">সিনিয়র শিক্ষক (ইসলাম ধর্ম)</div>
+                <div class="t-contact">📞 01721-593671</div>
+                <div class="t-contact">📧 robbani@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher3.jpg" alt="বীর বিক্রম"></div>
+            <div class="t-info">
+                <div class="t-name">বীর বিক্রম চৌধুরী</div>
+                <div class="t-role">সহকারী শিক্ষক (গণিত)</div>
+                <div class="t-contact">📞 01712-148153</div>
+                <div class="t-contact">📧 bikram@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher4.jpg" alt="কাজল চন্দ্র"></div>
+            <div class="t-info">
+                <div class="t-name">কাজল চন্দ্র দাস</div>
+                <div class="t-role">সহকারী শিক্ষক (সমাজবিজ্ঞান)</div>
+                <div class="t-contact">📞 01741-160008</div>
+                <div class="t-contact">📧 kajal@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher5.jpg" alt="উত্তম বেপারী"></div>
+            <div class="t-info">
+                <div class="t-name">উত্তম বেপারী</div>
+                <div class="t-role">সহকারী শিক্ষক (কৃষি)</div>
+                <div class="t-contact">📞 01734-678152</div>
+                <div class="t-contact">📧 uttam@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher6.jpg" alt="রাশিদুল আলম"></div>
+            <div class="t-info">
+                <div class="t-name">মো: রাশিদুল আলম</div>
+                <div class="t-role">সহকারী শিক্ষক (ভৌত বিজ্ঞান)</div>
+                <div class="t-contact">📞 01758-516565</div>
+                <div class="t-contact">📧 rashidul@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher7.jpg" alt="মিহিকা বিশ্বাস"></div>
+            <div class="t-info">
+                <div class="t-name">মিহিকা বিশ্বাস</div>
+                <div class="t-role">সহকারী শিক্ষক (হিন্দু ধর্ম)</div>
+                <div class="t-contact">📞 01767-373634</div>
+                <div class="t-contact">📧 mihika@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="teacher8.jpg" alt="শারমীন শাম্মী"></div>
+            <div class="t-info">
+                <div class="t-name">শারমীন শাম্মী</div>
+                <div class="t-role">সহকারী শিক্ষক (ব্যবসায় শিক্ষা)</div>
+                <div class="t-contact">📞 01913-005071</div>
+                <div class="t-contact">📧 shammy@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff1.jpg" alt="মামুনুর রশীদ"></div>
+            <div class="t-info">
+                <div class="t-name">মামুনুর রশীদ</div>
+                <div class="t-role">কম্পিউটার ল্যাব অপারেটর</div>
+                <div class="t-contact">📞 01764-699599</div>
+                <div class="t-contact">📧 mamun@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff2.jpg" alt="মাহবুবুল ইসলাম"></div>
+            <div class="t-info">
+                <div class="t-name">মোঃ মাহবুবুল ইসলাম</div>
+                <div class="t-role">অফিস সহকারী</div>
+                <div class="t-contact">📞 01722-480540</div>
+                <div class="t-contact">📧 mahbub@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff3.jpg" alt="কয়ছর আহমদ"></div>
+            <div class="t-info">
+                <div class="t-name">কয়ছর আহমদ</div>
+                <div class="t-role">নিরাপত্তা কর্মী</div>
+                <div class="t-contact">📞 01739-945320</div>
+                <div class="t-contact">📧 koysor@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff4.jpg" alt="রাজু দাস"></div>
+            <div class="t-info">
+                <div class="t-name">রাজু দাস</div>
+                <div class="t-role">নৈশ প্রহরী</div>
+                <div class="t-contact">📞 01859-958472</div>
+                <div class="t-contact">📧 raju@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff5.jpg" alt="তাহের উদ্দিন"></div>
+            <div class="t-info">
+                <div class="t-name">তাহের উদ্দিন</div>
+                <div class="t-role">অফিস সহায়ক</div>
+                <div class="t-contact">📞 01719-720005</div>
+                <div class="t-contact">📧 taher@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff6.jpg" alt="রাহেলী আক্তার"></div>
+            <div class="t-info">
+                <div class="t-name">রাহেলী আক্তার রুলী</div>
+                <div class="t-role">আয়া</div>
+                <div class="t-contact">📞 01751-096173</div>
+                <div class="t-contact">📧 rahely@school.edu</div>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <div class="t-avatar-wrapper"><img src="staff7.jpg" alt="রুজিনা বেগম"></div>
+            <div class="t-info">
+                <div class="t-name">মোছা: রুজিনা বেগম</div>
+                <div class="t-role">পরিচ্ছন্নতা কর্মী</div>
+                <div class="t-contact">📞 01720-369300</div>
+                <div class="t-contact">📧 rujina@school.edu</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
             <div class="sec-title" style="margin-top: 20px;">কর্মচারীবৃন্দের তালিকা</div>
             <div class="table-responsive">
